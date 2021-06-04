@@ -1,21 +1,18 @@
 #include "ros/ros.h"
 #include "rt2_assignment1/RandomPosition.h"
 
-/**
- *@brief This returns a random value
- *@param M  the minimum of a certain interval
- *@param N the maximum of a certain interval 
- *@retval a double value, defining a random number adressed to myrandom
+/**The randMToN function
+ *return a random number in a certain range
+ *@param M the minimum of a certain range
+ *@param N the maximum of a certain range 
  */
 
 double randMToN(double M, double N)
 {     return M + (rand() / ( RAND_MAX / (N-M) ) ) ; }
 
-/**
- *@brief This function is the callback of the service server 
- *@param req  the request received from the client. It gets two intervals of values for x and y 
- *@param res  the response returned to the client (the random coordinates within a specific interval)
- *@retval the boolean 
+/** This function is the callback of the service /position_server 
+ *@param req  the request received: it gets two intervals of values for x and y 
+ *@param res  the response returned to the client: the random coordinates within a specific interval
  */
 bool myrandom (rt2_assignment1::RandomPosition::Request &req, rt2_assignment1::RandomPosition::Response &res){
     res.x = randMToN(req.x_min, req.x_max);
@@ -24,7 +21,9 @@ bool myrandom (rt2_assignment1::RandomPosition::Request &req, rt2_assignment1::R
     return true;
 }
 
-
+/**The Main function
+ *It simply initializes the service server, binding him to its function
+ */
 int main(int argc, char **argv)
 {
    /* initialising the random_position_server node */

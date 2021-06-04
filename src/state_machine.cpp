@@ -7,13 +7,14 @@
 
 bool start = false;
 
-/**
- *@brief This function is the callback function of the servise for server.
+/**The user_interface funtion
+ *
+ * This function is the callback function for the server
+ * of /user_interface service
  *@param req  the request received from the client of the user_interface.py. 
  *@param res  the response has not been used 
  *@retval A boolean value
  */
-
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
    /* if the user has entered 1, then the request of the command custom service  is a string, 
       initialised as "start" */
@@ -29,7 +30,16 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
     return true;
 }
 
-
+/**The main funtion
+ *
+ * This function initializes everithing that is needed
+ * waits for commands and then performes the various requests
+ * to services and action
+ * 
+ *@var service is the user_interface server 
+ *@var client_rp is the client asking for a random position 
+ *@var ac is the action client for reaching a goal
+ */
 int main(int argc, char **argv)
 {
    /* Initialising the state_machine node*/
@@ -57,20 +67,19 @@ int main(int argc, char **argv)
    
    while(ros::ok()){
    	ros::spinOnce();
-      /* if star var is True*/ 
    	if (start){
-         /* call for the Service random position */
+                /* call for the Service random position */
    		client_rp.call(rp);
    		ROS_INFO("Waiting for action server to start.");
   		/* wait for the action server to start*/
   		ac.waitForServer(); // will wait for infinite time
-      /* initialising goal's fields with retrieved random values */
+      		/* initialising goal's fields with retrieved random values */
   		goal.x = rp.response.x;
   		goal.y = rp.response.y;
   		goal.theta = rp.response.theta;
   		std::cout << "\nGoing to the position: x= " << goal.x << " y= " << goal.y << " theta = " <<goal.theta << std::endl;
   		/* sending the goal to the action server */
-      ac.sendGoal(goal);
+      		ac.sendGoal(goal);
   		
 		/* wait for the action to return until the robot reach the desired postion */
  		bool finished_before_timeout = ac.waitForResult(ros::Duration(120.0));

@@ -30,14 +30,14 @@ lb_a = -0.5
 ub_d = 0.6
 
 
-## Documentation for the clbk_odom function.
+## The clbk_odom function.
 #
-#  More details.
-#
+#  This Callback is for the subscriber to topic odom
+#  it keeps track of the robot pose.
 #
 # @var position_ gets the actual position of the robot 
-# @var defines the robot orientation
-# @arg msg the posiion message
+# @var yah defines the robot orientation
+# @arg msg the message carrying the information
 
 def clbk_odom(msg):
     global position_
@@ -57,15 +57,17 @@ def clbk_odom(msg):
 
 
 class GoalReachingAction(object):
+## GoalReachingAction is the action allowing the robot to reach a pose.
+#
+#
+
     # initialising variables for defining each field of the action
     _feedback = rt2_assignment1.msg.GoalReachingFeedback()
     _result = rt2_assignment1.msg.GoalReachingResult()
     _goal = rt2_assignment1.msg.GoalReachingGoal()
 
-## Documentation for the _init_function.
-#
-#  More details.
-#
+## The _init_function. initializes the action object
+#.
 #
 # @arg self 
 # @arg name refers to the action name 
@@ -80,7 +82,13 @@ class GoalReachingAction(object):
 
 ## Documentation for the execute_cb function.
 #
-#  More details.
+# This calback takes as argument the goal variable whose value is
+# provided from the action client in the state_machine.cpp. The feedback
+# of the action message is constantly updated as the current pose of 
+# the robot. The desired_position is initialised as the goal of 
+# the action. To conclude with, the change_state function (which is responsible
+# for the _state assignment) is given with argument zero so that the robot 
+# can start fixing its own yaw before proceeding by reaching the goal
 #
 #
 # @arg self 
@@ -89,18 +97,7 @@ class GoalReachingAction(object):
 # @var success boolean variable to confirm the action ending 
 
     def execute_cb(self, goal):
-        '''
-        Description of the callback:
-        This function takes as argument the goal variable whose value is
-        provided from the action client in the state_machine.cpp. The feedback
-        of the action message is constantly updated as the current pose of 
-        the robot. Then the desired_position is initialised as the goal of 
-        the action. To conclude with, the change_state function (which is responsible
-        for the _state assignment) is given with argument zero so that the robot 
-        can start fixing its own yaw before proceeding by reaching the goal
         
-
-        '''
         global position_, yaw_precision_, yaw_, state_, pub_
         # helper variables
         r = rospy.Rate(1)
@@ -143,24 +140,31 @@ class GoalReachingAction(object):
                 self.done()
                 break
          
-## Documentation for the change_state function.
+## The change_state function.
 #
-#  More details.
-#
-# @param
+#  It controls the state of the robot, allowing to translate 
+#  or to rotate when needed.
+
+# @param state indicates the new state to chancge to
 # @var state_ the current state of the robot
-
-
     def change_state(self,state):
         global state_
         state_ = state
         print('State changed to [%s]' % state_)
 
+## The normalize_angle function.
+#
+#  It performs normalazation of an angle .
     def normalize_angle(self,angle):
         if(math.fabs(angle) > math.pi):
             angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
         return angle
-
+        
+## The fix_yah function.
+#
+#  It rotates the robot to fix it's yah in the desired direction
+#  by publishing a twist message on /cmd_vel
+#  @param des_pos from this desired position computes the desired yah
     def fix_yaw(self,des_pos):
         desired_yaw = math.atan2(
             des_pos.y - position_.y,
@@ -180,6 +184,9 @@ class GoalReachingAction(object):
             #print ('Yaw error: [%s]' % err_yaw)
             self.change_state(1)
 
+## The go_straight_ahead function.
+#
+#  It allows the robot to go straight or to change it's state if needed
     def go_straight_ahead(self,des_pos):
         desired_yaw = math.atan2(
             des_pos.y - position_.y,
@@ -204,6 +211,10 @@ class GoalReachingAction(object):
             #print ('Yaw error: [%s]' % err_yaw)
             self.change_state(0)
 
+## The fix_final_yah function.
+#
+#  It allows the robot to fix it's yah and reach the final state(done)
+#  if the conditions are met
     def fix_final_yaw(self,des_yaw):
         err_yaw = self.normalize_angle(des_yaw - yaw_)
         rospy.loginfo(err_yaw)
@@ -220,6 +231,9 @@ class GoalReachingAction(object):
             #print ('Yaw error: [%s]' % err_yaw)
             self.change_state(3)
 
+## The done function.
+#
+#  It stops the robot meaning that the pose has been reached
     def done(self):
         twist_msg = Twist()
         twist_msg.linear.x = 0
@@ -234,8 +248,8 @@ class GoalReachingAction(object):
 #
 # @param None
 # @var server it is defined as an object of the GoalReaching class 
-# @var pub_ it defines the Oublisher of the topic /cmd_vel within which we publish messages of type Twist
-# @var sub_odom it is initialised as the subscriber to the /odom topic. As argument it calls the clbk_odom
+# @var pub_ it defines the publisher of the topic /cmd_vel 
+# @var sub_odom it is initialised as the subscriber to the /odom topic. It calls the clbk_odom
 
 def main():
     global pub_

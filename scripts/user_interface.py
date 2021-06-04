@@ -7,16 +7,18 @@ import actionlib
 import rt2_assignment1.msg
 from geometry_msgs.msg import Twist
 
-## Documentation for the main function.
+## The main function.
 #
-#  More details.
+#  This node allows the user to interact with the robot.
 #
 #
-# @var ui_client defines a service client of user_interface type. It taskes as argument the Command service to activate/deactivate robot behaviours according to user's preferences  
-# @var client defines the action client  of the go_to_point Action. As argument it takes the message of type GoalReaching action belonging to the rt2assignment1 package
-# @var pub It defines the publsiher of the cmd_vel toic. It publishes a twist message to stop the robot. 
-# @var rate useful to fix the frequency of the loop
-# @var x it stores the input value when the user interface gets prompted to the user 
+# @var ui_client defines a service client of user_interface type.
+# It taskes as argument the Command service to activate/deactivate robot 
+# @var client defines the action client  of the go_to_point Action. 
+# As argument it takes the action of type GoalReaching 
+# @var pub It defines the publsiher of the cmd_vel toic.
+# Used to stop the robot
+# @var x it stores the input value inserted by the user
 
 def main():
     # Initialising the user_interface node
@@ -36,7 +38,7 @@ def main():
             
         else:
         # if entered value is equal to zero, then he robot's action goals are canceled     
-            client.cancel_all_goals()
+            client.cancel_goal()
             # i decleare a msg of type twist to stop the robot
             twist_msg = Twist()
             twist_msg.linear.x = 0
