@@ -12,7 +12,7 @@ Given that, **the robot FSM node** should now implement mechanisms for possibly 
 ##Custom action: the GoalReaching action
 
 The action used by the **go_to_point** node implemented as an action server:
-
+```
 float32 x
 float32 y
 float32 theta
@@ -22,7 +22,7 @@ bool ok
 float32 updated_x
 float32 updated_y
 float32 updated_theta
-
+```
 where the first 3 variables represent the goal(target pose)
       the bool ok is the result, set to true once the goal is reached
       the last 3 variables represent the feedback about the actual robot pose
