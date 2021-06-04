@@ -1,0 +1,32 @@
+
+\begin{DoxyItemize}
+\item Index\+:
+\begin{DoxyItemize}
+\item \href{\#general-instructions}{\texttt{ General Instructions}}
+\item \href{\#custom-action}{\texttt{ Custom action}}
+\item \href{\#launch-the-node}{\texttt{ Launch the node}}
+\item \href{\#additional-documentation}{\texttt{ Additional docuementation}} 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{General Instructions}\label{md__r_e_a_d_m_e_autotoc_md1}
+This branch contains the same package of the main branch, but with the {\bfseries{\mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}}}} node modelled as a R\+OS action server, instead of a “simple” server. Given that, {\bfseries{the robot F\+SM node}} should now implement mechanisms for possibly cancelling the goal, when the related user command is received.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Custom action\+: the Goal\+Reaching action}\label{md__r_e_a_d_m_e_autotoc_md2}
+The action used by the {\bfseries{\mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}}}} node implemented as an action server\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{float32 x}
+\DoxyCodeLine{float32 y}
+\DoxyCodeLine{float32 theta}
+\DoxyCodeLine{-\/-\/-\/}
+\DoxyCodeLine{bool ok}
+\DoxyCodeLine{-\/-\/-\/}
+\DoxyCodeLine{float32 updated\_x}
+\DoxyCodeLine{float32 updated\_y}
+\DoxyCodeLine{float32 updated\_theta}
+\end{DoxyCode}
+
+
+where the first 3 variables represent the goal(target pose) the bool ok is the result, set to true once the goal is reached the last 3 variables represent the feedback about the actual robot pose\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Launch the node}\label{md__r_e_a_d_m_e_autotoc_md3}
+To launch the node, please run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch rt2\_assignment1 action\_branch.launch}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Additional documentation}\label{md__r_e_a_d_m_e_autotoc_md4}
+can be found opening the index.\+html file in the {\itshape docs} folder 

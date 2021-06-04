@@ -2,8 +2,9 @@
 
 - Index:
   - [General Instructions](#general-instructions)
-  - [Custom action: the GoalReaching action](#custom-action:-the-goalreaching-action)
+  - [Custom action](#custom-action)
   - [Launch the node](#launch-the-node)
+  - [Additional docuementation](#additional-documentation)
 ## General Instructions
 
 This branch contains the same package of the main branch, but with the **go_to_point** node modelled as a ROS action server, instead of a “simple” server.
@@ -33,4 +34,6 @@ To launch the node, please run:
 ```
 roslaunch rt2_assignment1 action_branch.launch
 ```
+## Additional documentation
 
+can be found opening the index.html file in the *docs* folder
