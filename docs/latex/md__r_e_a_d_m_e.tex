@@ -1,0 +1,34 @@
+
+\begin{DoxyItemize}
+\item Index\+:
+\begin{DoxyItemize}
+\item \href{\#general-instructions}{\texttt{ General Instructions}}
+\item \href{\#more-about-the-actions-branch}{\texttt{ More about the \char`\"{}\+\_\+actions\+\_\+\char`\"{} branch}}
+\item \href{\#more-about-the-ros2-branch}{\texttt{ More about the \char`\"{}\+\_\+ros2\+\_\+\char`\"{} branch}}
+\item \href{\#launch-the-node}{\texttt{ Launch the node}}
+\item \href{\#additional-documentation}{\texttt{ Additional documentation}} 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{General Instructions}\label{md__r_e_a_d_m_e_autotoc_md1}
+The \href{https://github.com/CarmineD8/rt2_assignment1}{\texttt{ Professor\textquotesingle{}s package}} has been modified by creating this repository, containing the given package and two additional branches\+:
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily actions}
+\item {\ttfamily ros2}
+\end{DoxyEnumerate}
+
+Finally, in the main branch (or in one of the two added branches), I added a Vrep scene containing the robot interacting with the simulation. (You can choose if using R\+OS or R\+O\+S2 api)\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{More about the \char`\"{}\+\_\+actions\+\_\+\char`\"{} branch}\label{md__r_e_a_d_m_e_autotoc_md2}
+This branch contains the same package of the main branch, but with the {\bfseries{\mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}}}} node modelled as a R\+OS action server, instead of a “simple” server. Given that, {\bfseries{the robot F\+SM node}} should now implement mechanisms for possibly cancelling the goal, when the related user command is received\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{More about the \char`\"{}\+\_\+ros2\+\_\+\char`\"{} branch}\label{md__r_e_a_d_m_e_autotoc_md3}
+In the branch {\ttfamily ros2}, the cpp nodes (Robot F\+SM and position server) has been written for R\+O\+S2, as {\bfseries{components}}, or composable nodes. By using the {\bfseries{ros1\+\_\+bridge}}, they can be linked with the respective R\+OS nodes and with the simulation in Gazebo. {\bfseries{The \mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}}}} behaviour is still implemented as a service. Also\+:
+
+
+\begin{DoxyEnumerate}
+\item I\textquotesingle{}ve written a launch file to start the container manager and all the nodes as components.
+\item a script to launch all required nodes and the simulation has also been implemented
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Launch the node}\label{md__r_e_a_d_m_e_autotoc_md4}
+To launch the node, please run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch rt2\_assignment1 rt2\_assignment1.launch}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Additional documentation}\label{md__r_e_a_d_m_e_autotoc_md5}
+Can be found in {\itshape docs} folderv opening index.\+html file in the browser 

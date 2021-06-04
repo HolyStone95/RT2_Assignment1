@@ -5,6 +5,7 @@
   - [More about the "_actions_" branch](#more-about-the-actions-branch)
   - [More about the "_ros2_" branch](#more-about-the-ros2-branch)
   - [Launch the node](#launch-the-node)
+  - [Additional documentation](#additional-documentation)
 ## General Instructions
 
 The [Professor's package](https://github.com/CarmineD8/rt2_assignment1) has been modified by creating this repository, containing the given package and two additional branches:
@@ -33,4 +34,6 @@ To launch the node, please run:
 ```
 roslaunch rt2_assignment1 rt2_assignment1.launch
 ```
+## Additional documentation
 
+Can be found in *docs* folderv opening index.html file in the browser
