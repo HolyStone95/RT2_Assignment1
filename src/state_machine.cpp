@@ -5,17 +5,39 @@
 
 bool start = false;
 
+/**The user_interface funtion
+ *
+ * This function is the callback function for the server
+ * of /user_interface service
+ *@param req  the request received from the client of the user_interface.py. 
+ *@param res  the response has not been used 
+ *@retval A boolean value
+ */
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
+    /* if the user has entered 1, then the request of the command custom service  is a string, 
+      initialised as "start" */
     if (req.command == "start"){
+    	/* the global boolean start is set to True*/
     	start = true;
     }
+    /* else if the user has entered 0*/  
     else {
+      /* the global boolean start is set to False*/     
     	start = false;
     }
     return true;
 }
 
-
+/**The main funtion
+ *
+ * This function initializes everithing that is needed
+ * waits for commands and then performes the various requests
+ * to services and action
+ * 
+ *@var service is the user_interface server 
+ *@var client_rp is the client asking for a random position 
+ *@var client_p is the service client for reaching a goal
+ */
 int main(int argc, char **argv)
 {
    ros::init(argc, argv, "state_machine");
@@ -33,6 +55,7 @@ int main(int argc, char **argv)
    
    while(ros::ok()){
    	ros::spinOnce();
+   	/*request a goal pose, use the response as request for go_to_point service*/
    	if (start){
    		client_rp.call(rp);
    		p.request.x = rp.response.x;
