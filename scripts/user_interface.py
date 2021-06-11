@@ -37,15 +37,6 @@ def main():
             x = int(input("\nPress 0 to stop the robot "))            
             
         else:
-        # if entered value is equal to zero, then he robot's action goals are canceled     
-            client.cancel_goal()
-            # i decleare a msg of type twist to stop the robot
-            twist_msg = Twist()
-            twist_msg.linear.x = 0
-            twist_msg.linear.y=0
-            twist_msg.angular.z = 0
-            # i publish the message
-            pub_.publish(twist_msg)
             # the ui_client ' argument is settled to stp in order to deactivate the behaviour 
             ui_client("stop")
             # asking for another input

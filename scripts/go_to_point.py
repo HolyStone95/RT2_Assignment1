@@ -241,6 +241,7 @@ class GoalReachingAction(object):
         pub_.publish(twist_msg)
         self._result.ok = True
         rospy.loginfo(' Succeeded in reaching the desired Position! ')
+        self._as.set_succeeded(self._result)
 
 ## Documentation for the main function.
 #

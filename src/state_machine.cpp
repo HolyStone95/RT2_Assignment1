@@ -4,9 +4,12 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 #include <rt2_assignment1/GoalReachingAction.h>
+#include <geometry_msgs/Twist.h>
+#include <iostream>
 
 bool start = false;
-
+bool change = false;
+bool working = false;
 /**The user_interface funtion
  *
  * This function is the callback function for the server
@@ -21,11 +24,13 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
     if (req.command == "start"){
       /* the global boolean start is set to True*/
     	start = true;
+    	working = true;
     }
     /* else if the user has entered 0*/  
     else {
       /* the global boolean start is set to False*/ 
     	start = false;
+	change = true;
     }
     return true;
 }
@@ -50,24 +55,27 @@ int main(int argc, char **argv)
    ros::ServiceServer service= n.advertiseService("/user_interface", user_interface);
    /* initialising the client for retreving the random position by means of the /position_server service */
    ros::ServiceClient client_rp = n.serviceClient<rt2_assignment1::RandomPosition>("/position_server");
-   /* creating the action client */
-   /* true causes the client to spin its own thread */
-   actionlib::SimpleActionClient<rt2_assignment1::GoalReachingAction> ac("go_to_point", true);
    /* initialising a custom message of type RandomPosition */
    rt2_assignment1::RandomPosition rp;
    /* initialising a custom  message of typer GoarReaching goal */
    rt2_assignment1::GoalReachingGoal goal;
-   
+   actionlib::SimpleActionClient<rt2_assignment1::GoalReachingAction> ac("go_to_point", true);
+   ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 1000);
+   geometry_msgs::Twist msg;
+
    /* filling the custom message request fields */
    rp.request.x_max = 5.0;
    rp.request.x_min = -5.0;
    rp.request.y_max = 5.0;
    rp.request.y_min = -5.0;
  
+   rt2_assignment1::GoalReachingResultConstPtr result;
+   int res;
    
    while(ros::ok()){
    	ros::spinOnce();
    	if (start){
+   	    if (working){
                 /* call for the Service random position */
    		client_rp.call(rp);
    		ROS_INFO("Waiting for action server to start.");
@@ -80,18 +88,24 @@ int main(int argc, char **argv)
   		std::cout << "\nGoing to the position: x= " << goal.x << " y= " << goal.y << " theta = " <<goal.theta << std::endl;
   		/* sending the goal to the action server */
       		ac.sendGoal(goal);
-  		
-		/* wait for the action to return until the robot reach the desired postion */
- 		bool finished_before_timeout = ac.waitForResult(ros::Duration(120.0));
-		
-      
-		if (finished_before_timeout)
-		{
-		   ROS_INFO("Postion reacheded ");
+      		working = false;
+  	    }
+  	    else{
+		result = ac.getResult();
+		res =(int) result->ok;
+		if (res == 1){
+		    working = true;
 		}
-		else
-		   ROS_INFO("Action did not finish before the time out.");
-   		
+	    }	
+   	}
+   	else{	
+   		if(change){
+   	            ac.cancelGoal();
+   		}
+   		msg.linear.x=0;
+   		msg.linear.y=0;
+   		msg.angular.z=0;
+   		pub.publish(msg);
    	}
    }
    return 0;
