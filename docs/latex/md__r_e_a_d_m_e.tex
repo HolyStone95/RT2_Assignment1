@@ -1,0 +1,30 @@
+
+\begin{DoxyItemize}
+\item Index\+:
+\begin{DoxyItemize}
+\item \href{\#general-instructions}{\texttt{ General Instructions}}
+\item \href{\#launch-the-node}{\texttt{ Launch the node}}
+\item \href{\#additional-documentation}{\texttt{ Additional docuementation}} 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{General Instructions}\label{md__r_e_a_d_m_e_autotoc_md1}
+In the branch {\ttfamily ros2}, the cpp nodes (Robot F\+SM and position server) has been written for R\+O\+S2, as {\bfseries{components}}, or composable nodes. The file {\bfseries{mapping\+\_\+rules.\+yaml}} will allow, using the {\bfseries{ros1\+\_\+bridge}} package, to create a link with the respective R\+OS nodes and with the simulation in Gazebo. {\bfseries{The go\+\_\+to\+\_\+point}} behaviour is still implemented as a service.
+
+Also\+:
+
+
+\begin{DoxyEnumerate}
+\item I\textquotesingle{}ve written a {\itshape {\bfseries{script}}} to start the container manager and all the nodes as components.
+\item a {\itshape {\bfseries{launch file}}} to launch all required nodes and the simulation has also been implemented
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Launch the node}\label{md__r_e_a_d_m_e_autotoc_md2}
+To launch the nodes as components in a container, please run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 launch rt2\_assignment1 composable\_launch.py}
+\end{DoxyCode}
+
+
+To instead launch them as nodes and to launch Gazebo simulation, please run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 launch rt2\_assignment1 ros2.launch}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Additional documentation}\label{md__r_e_a_d_m_e_autotoc_md3}
+can be found opening the index.\+html file in the {\itshape docs} folder 

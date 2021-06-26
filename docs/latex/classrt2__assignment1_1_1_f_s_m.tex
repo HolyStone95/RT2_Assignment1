@@ -1,0 +1,49 @@
+\hypertarget{classrt2__assignment1_1_1_f_s_m}{}\doxysection{rt2\+\_\+assignment1\+::F\+SM Class Reference}
+\label{classrt2__assignment1_1_1_f_s_m}\index{rt2\_assignment1::FSM@{rt2\_assignment1::FSM}}
+
+
+Inheritance diagram for rt2\+\_\+assignment1\+::F\+SM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classrt2__assignment1_1_1_f_s_m__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for rt2\+\_\+assignment1\+::F\+SM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classrt2__assignment1_1_1_f_s_m__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrt2__assignment1_1_1_f_s_m_a478e9cd5058c96962f690993f8c28517}{F\+SM}} (const rclcpp\+::\+Node\+Options \&options)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classrt2__assignment1_1_1_f_s_m}{F\+SM}} (Finite State Machine) Class\+: The \mbox{\hyperlink{classrt2__assignment1_1_1_f_s_m}{F\+SM}} Node is implemented as a class so that it can be structured as a component. It will be interfaced with the R\+OS node by means of the ros1\+\_\+bridge package 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrt2__assignment1_1_1_f_s_m_a478e9cd5058c96962f690993f8c28517}\label{classrt2__assignment1_1_1_f_s_m_a478e9cd5058c96962f690993f8c28517}} 
+\index{rt2\_assignment1::FSM@{rt2\_assignment1::FSM}!FSM@{FSM}}
+\index{FSM@{FSM}!rt2\_assignment1::FSM@{rt2\_assignment1::FSM}}
+\doxysubsubsection{\texorpdfstring{FSM()}{FSM()}}
+{\footnotesize\ttfamily rt2\+\_\+assignment1\+::\+F\+S\+M\+::\+F\+SM (\begin{DoxyParamCaption}\item[{const rclcpp\+::\+Node\+Options \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initialisation of the state\+\_\+machine service and clients. Inside the Class constructor, there exists a /user\+\_\+interface service server. By means of the bind function, the callback is executed as soon as the client makes a request. Then the \mbox{\hyperlink{classrt2__assignment1_1_1_f_s_m}{F\+SM}} starts working. The two clients request respectively the /go\+\_\+to\+\_\+point service and the position server service. $<$ server of type Command
+
+$<$ client\+\_\+1 of type position ~\newline
+
+
+$<$ client\+\_\+2 of type Random\+Position
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/state\+\_\+machine.\+cpp\end{DoxyCompactItemize}
