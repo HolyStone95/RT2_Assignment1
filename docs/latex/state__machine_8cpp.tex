@@ -6,6 +6,8 @@
 {\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
 {\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
 {\ttfamily \#include $<$rt2\+\_\+assignment1/\+Goal\+Reaching\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Twist.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 Include dependency graph for state\+\_\+machine.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -25,6 +27,10 @@ int \mbox{\hyperlink{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}{start}} = false
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_a857502cff71d45019163294ccc1779d5}{change}} = false
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_ae09a6d2c62b4793b98e41d4de18b2a40}{working}} = false
 \end{DoxyCompactItemize}
 
 
@@ -58,9 +64,21 @@ This function is the callback function for the server of /user\+\_\+interface se
 
 
 \doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{state__machine_8cpp_a857502cff71d45019163294ccc1779d5}\label{state__machine_8cpp_a857502cff71d45019163294ccc1779d5}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!change@{change}}
+\index{change@{change}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{change}{change}}
+{\footnotesize\ttfamily bool change = false}
+
 \mbox{\Hypertarget{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}\label{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}} 
 \index{state\_machine.cpp@{state\_machine.cpp}!start@{start}}
 \index{start@{start}!state\_machine.cpp@{state\_machine.cpp}}
 \doxysubsubsection{\texorpdfstring{start}{start}}
 {\footnotesize\ttfamily bool start = false}
+
+\mbox{\Hypertarget{state__machine_8cpp_ae09a6d2c62b4793b98e41d4de18b2a40}\label{state__machine_8cpp_ae09a6d2c62b4793b98e41d4de18b2a40}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!working@{working}}
+\index{working@{working}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{working}{working}}
+{\footnotesize\ttfamily bool working = false}
 

@@ -110,6 +110,8 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a36304a9f313b0579f7fc69fa01695524"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a36304a9f313b0579f7fc69fa01695524">clbk_odom</a> (msg)</td></tr>
 <tr class="separator:a36304a9f313b0579f7fc69fa01695524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea56a392e98b6db44754a04f7039ccd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#afea56a392e98b6db44754a04f7039ccd">clbk_vel</a> (msg)</td></tr>
+<tr class="separator:afea56a392e98b6db44754a04f7039ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0961ae1b210549fe6c6567bf94fb17c6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a0961ae1b210549fe6c6567bf94fb17c6">__init__</a> (self, name)</td></tr>
 <tr class="separator:a0961ae1b210549fe6c6567bf94fb17c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d2c03bc184771298197eab5e767d6ea"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a1d2c03bc184771298197eab5e767d6ea">execute_cb</a> (self, goal)</td></tr>
@@ -145,6 +147,10 @@ Variables</h2></td></tr>
 <tr class="separator:aa2d0ef255bcf5d5faf9ca2764730fb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b4090d0abcbcf0bfa2bcb9329d3036"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a57b4090d0abcbcf0bfa2bcb9329d3036">pub_</a> = None</td></tr>
 <tr class="separator:a57b4090d0abcbcf0bfa2bcb9329d3036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0157a8fb4c1c26f4d5e8ea95652b0d7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a0157a8fb4c1c26f4d5e8ea95652b0d7c">vel_</a> = Twist()</td></tr>
+<tr class="separator:a0157a8fb4c1c26f4d5e8ea95652b0d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9119ce4b16011b75d7a08dc0f9e2f69e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a9119ce4b16011b75d7a08dc0f9e2f69e">vel</a> = 0</td></tr>
+<tr class="separator:a9119ce4b16011b75d7a08dc0f9e2f69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67f95834f0959feb3facd17bc7fa2b38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#a67f95834f0959feb3facd17bc7fa2b38">yaw_precision_</a> = math.pi / 9</td></tr>
 <tr class="separator:a67f95834f0959feb3facd17bc7fa2b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af74ccf49164d0478ca8343e2031d5813"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacego__to__point.html#af74ccf49164d0478ca8343e2031d5813">yaw_precision_2_</a> = math.pi / 90</td></tr>
@@ -230,6 +236,32 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">def go_to_point.clbk_odom </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">The clbk_odom function.
+
+This Callback is for the subscriber to topic odom
+it keeps track of the robot pose.
+
+:var position_ : gets the actual position of the robot 
+:var yah: defines the robot orientation
+:param msg: the message carrying the information
+</pre> 
+</div>
+</div>
+<a id="afea56a392e98b6db44754a04f7039ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea56a392e98b6db44754a04f7039ccd">&#9670;&nbsp;</a></span>clbk_vel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def go_to_point.clbk_vel </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -556,6 +588,34 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">float go_to_point.ub_d = 0.6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9119ce4b16011b75d7a08dc0f9e2f69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9119ce4b16011b75d7a08dc0f9e2f69e">&#9670;&nbsp;</a></span>vel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int go_to_point.vel = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0157a8fb4c1c26f4d5e8ea95652b0d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0157a8fb4c1c26f4d5e8ea95652b0d7c">&#9670;&nbsp;</a></span>vel_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">go_to_point.vel_ = Twist()</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['position_5f_61',['position_',['../namespacego__to__point.html#a91dbaab25e6080f6b5dbf82cac6ce75c',1,'go_to_point']]],
-  ['pub_5f_62',['pub_',['../namespacego__to__point.html#a57b4090d0abcbcf0bfa2bcb9329d3036',1,'go_to_point']]]
+  ['lb_5fa_67',['lb_a',['../namespacego__to__point.html#afecad4058844db05d8321199e25b4498',1,'go_to_point']]]
 ];

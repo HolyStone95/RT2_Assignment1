@@ -25,9 +25,8 @@ var NAVTREE =
   [ "My Project", "index.html", [
     [ "First assignment <em>Research Track</em> course - second module - actions branch", "md__r_e_a_d_m_e.html", [
       [ "General Instructions", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Custom action: the GoalReaching action", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Launch the node", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Additional documentation", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
+      [ "Launch the nodes", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Additional documentation", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

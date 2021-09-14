@@ -10,6 +10,8 @@ class \mbox{\hyperlink{classgo__to__point_1_1_goal_reaching_action}{Goal\+Reachi
 \item 
 def \mbox{\hyperlink{namespacego__to__point_a36304a9f313b0579f7fc69fa01695524}{clbk\+\_\+odom}} (msg)
 \item 
+def \mbox{\hyperlink{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}{clbk\+\_\+vel}} (msg)
+\item 
 def \mbox{\hyperlink{namespacego__to__point_a0961ae1b210549fe6c6567bf94fb17c6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, name)
 \item 
 def \mbox{\hyperlink{namespacego__to__point_a1d2c03bc184771298197eab5e767d6ea}{execute\+\_\+cb}} (self, goal)
@@ -38,6 +40,10 @@ int \mbox{\hyperlink{namespacego__to__point_ae444f19eb2019982432760ace036ce03}{y
 int \mbox{\hyperlink{namespacego__to__point_aa2d0ef255bcf5d5faf9ca2764730fb17}{state\+\_\+}} = 0
 \item 
 \mbox{\hyperlink{namespacego__to__point_a57b4090d0abcbcf0bfa2bcb9329d3036}{pub\+\_\+}} = None
+\item 
+\mbox{\hyperlink{namespacego__to__point_a0157a8fb4c1c26f4d5e8ea95652b0d7c}{vel\+\_\+}} = Twist()
+\item 
+int \mbox{\hyperlink{namespacego__to__point_a9119ce4b16011b75d7a08dc0f9e2f69e}{vel}} = 0
 \item 
 int \mbox{\hyperlink{namespacego__to__point_a67f95834f0959feb3facd17bc7fa2b38}{yaw\+\_\+precision\+\_\+}} = math.\+pi / 9
 \item 
@@ -79,6 +85,21 @@ It controls the state of the robot, allowing to translate or to rotate when need
 \index{clbk\_odom@{clbk\_odom}!go\_to\_point@{go\_to\_point}}
 \doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
 {\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The clbk_odom function.
+
+This Callback is for the subscriber to topic odom
+it keeps track of the robot pose.
+
+:var position_ : gets the actual position of the robot 
+:var yah: defines the robot orientation
+:param msg: the message carrying the information
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}\label{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}} 
+\index{go\_to\_point@{go\_to\_point}!clbk\_vel@{clbk\_vel}}
+\index{clbk\_vel@{clbk\_vel}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{clbk\_vel()}{clbk\_vel()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+vel (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}\label{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}} 
 \index{go\_to\_point@{go\_to\_point}!done@{done}}
@@ -203,6 +224,18 @@ It performs normalazation of an angle .
 \index{ub\_d@{ub\_d}!go\_to\_point@{go\_to\_point}}
 \doxysubsubsection{\texorpdfstring{ub\_d}{ub\_d}}
 {\footnotesize\ttfamily float go\+\_\+to\+\_\+point.\+ub\+\_\+d = 0.\+6}
+
+\mbox{\Hypertarget{namespacego__to__point_a9119ce4b16011b75d7a08dc0f9e2f69e}\label{namespacego__to__point_a9119ce4b16011b75d7a08dc0f9e2f69e}} 
+\index{go\_to\_point@{go\_to\_point}!vel@{vel}}
+\index{vel@{vel}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily int go\+\_\+to\+\_\+point.\+vel = 0}
+
+\mbox{\Hypertarget{namespacego__to__point_a0157a8fb4c1c26f4d5e8ea95652b0d7c}\label{namespacego__to__point_a0157a8fb4c1c26f4d5e8ea95652b0d7c}} 
+\index{go\_to\_point@{go\_to\_point}!vel\_@{vel\_}}
+\index{vel\_@{vel\_}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{vel\_}{vel\_}}
+{\footnotesize\ttfamily go\+\_\+to\+\_\+point.\+vel\+\_\+ = Twist()}
 
 \mbox{\Hypertarget{namespacego__to__point_ae444f19eb2019982432760ace036ce03}\label{namespacego__to__point_ae444f19eb2019982432760ace036ce03}} 
 \index{go\_to\_point@{go\_to\_point}!yaw\_@{yaw\_}}

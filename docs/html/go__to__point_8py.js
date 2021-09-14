@@ -4,6 +4,7 @@ var go__to__point_8py =
     [ "__init__", "go__to__point_8py.html#a0961ae1b210549fe6c6567bf94fb17c6", null ],
     [ "change_state", "go__to__point_8py.html#a4f1a4b111176c2378561c682f5cd68d5", null ],
     [ "clbk_odom", "go__to__point_8py.html#a36304a9f313b0579f7fc69fa01695524", null ],
+    [ "clbk_vel", "go__to__point_8py.html#afea56a392e98b6db44754a04f7039ccd", null ],
     [ "done", "go__to__point_8py.html#ad537df6ce92476d81b2de4048ea1732f", null ],
     [ "execute_cb", "go__to__point_8py.html#a1d2c03bc184771298197eab5e767d6ea", null ],
     [ "fix_final_yaw", "go__to__point_8py.html#afe89abac4cdb91adb7848ceb7aff4c0c", null ],
@@ -22,6 +23,8 @@ var go__to__point_8py =
     [ "state_", "go__to__point_8py.html#aa2d0ef255bcf5d5faf9ca2764730fb17", null ],
     [ "ub_a", "go__to__point_8py.html#acb4e14986fafe5cb73bb8ad0c178869d", null ],
     [ "ub_d", "go__to__point_8py.html#a16c473b9e717200c483d18e66b48152a", null ],
+    [ "vel", "go__to__point_8py.html#a9119ce4b16011b75d7a08dc0f9e2f69e", null ],
+    [ "vel_", "go__to__point_8py.html#a0157a8fb4c1c26f4d5e8ea95652b0d7c", null ],
     [ "yaw_", "go__to__point_8py.html#ae444f19eb2019982432760ace036ce03", null ],
     [ "yaw_precision_", "go__to__point_8py.html#a67f95834f0959feb3facd17bc7fa2b38", null ],
     [ "yaw_precision_2_", "go__to__point_8py.html#af74ccf49164d0478ca8343e2031d5813", null ]

@@ -98,7 +98,6 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 <div class="textblock"><ul>
 <li>Index:<ul>
 <li><a href="#general-instructions">General Instructions</a></li>
-<li><a href="#custom-action">Custom action</a></li>
 <li><a href="#launch-the-node">Launch the node</a></li>
 <li><a href="#additional-documentation">Additional docuementation</a> </li>
 </ul>
@@ -106,23 +105,12 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 General Instructions</h1>
-<p>This branch contains the same package of the main branch, but with the <b><a class="el" href="namespacego__to__point.html">go_to_point</a></b> node modelled as a ROS action server, instead of a “simple” server. Given that, <b>the robot FSM node</b> should now implement mechanisms for possibly cancelling the goal, when the related user command is received.</p>
+<p>This branch contains the same package contained in the <b>actions</b> branch at the repository <a href="https://github.com/HolyStone95/RT2_Assignment1">https://github.com/HolyStone95/RT2_Assignment1</a>. Additionally inside the folder <b>notebook</b> it has been implemented a jupyter notebook to enhanche the user interface interacting with the simulation in Gazebo and the ROS nodes.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Custom action: the GoalReaching action</h1>
-<p>The action used by the <b><a class="el" href="namespacego__to__point.html">go_to_point</a></b> node implemented as an action server: </p><div class="fragment"><div class="line">float32 x</div>
-<div class="line">float32 y</div>
-<div class="line">float32 theta</div>
-<div class="line">---</div>
-<div class="line">bool ok</div>
-<div class="line">---</div>
-<div class="line">float32 updated_x</div>
-<div class="line">float32 updated_y</div>
-<div class="line">float32 updated_theta</div>
-</div><!-- fragment --><p>where the first 3 variables represent the goal(target pose) the bool ok is the result, set to true once the goal is reached the last 3 variables represent the feedback about the actual robot pose</p>
+Launch the nodes</h1>
+<p>To launch the nodes, please run: </p><div class="fragment"><div class="line">roslaunch rt2_assignment1 action_branch.launch</div>
+</div><!-- fragment --><p>After that run the jupyter notebook to start interacting with the simulation using the new interface.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
-Launch the node</h1>
-<p>To launch the node, please run: </p><div class="fragment"><div class="line">roslaunch rt2_assignment1 action_branch.launch</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Additional documentation</h1>
 <p>can be found opening the index.html file in the <em>docs</em> folder </p>
 </div></div><!-- contents -->
