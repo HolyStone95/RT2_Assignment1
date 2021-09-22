@@ -24,8 +24,6 @@ def main():
     # Initialising the user_interface node
     rospy.init_node('user_interface')
     ui_client = rospy.ServiceProxy('/user_interface', Command)
-    client = actionlib.SimpleActionClient('go_to_point', rt2_assignment1.msg.GoalReachingAction)
-    pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     time.sleep(10)
     rate = rospy.Rate(20)
     x = int(input("\nPress 1 to start the robot "))

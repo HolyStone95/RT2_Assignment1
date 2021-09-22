@@ -19,6 +19,9 @@ position_ = 0
 state_ = 0
 pub_ = None
 
+vel_ = Twist()
+vel = 0
+
 # parameters for control
 yaw_precision_ = math.pi / 9  # +/- 20 degree allowed
 yaw_precision_2_ = math.pi / 90  # +/- 2 degree allowed
@@ -28,6 +31,7 @@ kp_d = 0.2
 ub_a = 0.6
 lb_a = -0.5
 ub_d = 0.6
+
 
 
 ## The clbk_odom function.
@@ -40,6 +44,17 @@ ub_d = 0.6
 # @arg msg the message carrying the information
 
 def clbk_odom(msg):
+    """
+    The clbk_odom function.
+
+    This Callback is for the subscriber to topic odom
+    it keeps track of the robot pose.
+
+    :var position_ : gets the actual position of the robot 
+    :var yah: defines the robot orientation
+    :param msg: the message carrying the information
+    """
+
     global position_
     global yaw_
 
@@ -53,6 +68,12 @@ def clbk_odom(msg):
         msg.pose.pose.orientation.w)
     euler = transformations.euler_from_quaternion(quaternion)
     yaw_ = euler[2]
+    
+def clbk_vel(msg):
+    global vel_
+
+    vel_.linear.x = msg.linear.x
+    vel_.angular.z = msg.angular.z
 
 
 
@@ -98,7 +119,7 @@ class GoalReachingAction(object):
 
     def execute_cb(self, goal):
         
-        global position_, yaw_precision_, yaw_, state_, pub_
+        global position_, yaw_precision_, yaw_, state_, pub_, vel_
         # helper variables
         r = rospy.Rate(1)
         # boolean variable initialisation
@@ -173,7 +194,7 @@ class GoalReachingAction(object):
         rospy.loginfo(err_yaw)
         twist_msg = Twist()
         if math.fabs(err_yaw) > yaw_precision_2_:
-            twist_msg.angular.z = kp_a * err_yaw
+            twist_msg.angular.z = -vel_.angular.z * 2 * err_yaw
             if twist_msg.angular.z > ub_a:
                 twist_msg.angular.z = ub_a
             elif twist_msg.angular.z < lb_a:
@@ -198,10 +219,10 @@ class GoalReachingAction(object):
         rospy.loginfo(err_yaw)
         if err_pos > dist_precision_:
             twist_msg = Twist()
-            twist_msg.linear.x = 0.3
+            twist_msg.linear.x = vel_.linear.x
             if twist_msg.linear.x > ub_d:
                 twist_msg.linear.x = ub_d
-            twist_msg.angular.z = kp_a * err_yaw
+            twist_msg.angular.z = -vel_.angular.z * 2 * err_yaw
             pub_.publish(twist_msg)
         else:  # state change conditions
         #print ('Position error: [%s]' % err_pos)
@@ -220,7 +241,7 @@ class GoalReachingAction(object):
         rospy.loginfo(err_yaw)
         twist_msg = Twist()
         if math.fabs(err_yaw) > yaw_precision_2_:
-            twist_msg.angular.z = kp_a * err_yaw
+            twist_msg.angular.z = -vel_.angular.z * 2 * err_yaw
             if twist_msg.angular.z > ub_a:
                 twist_msg.angular.z = ub_a
             elif twist_msg.angular.z < lb_a:
@@ -258,6 +279,7 @@ def main():
     server = GoalReachingAction('go_to_point')
     pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
+    sub_vel = rospy.Subscriber('/cmd_vel_filter', Twist, clbk_vel)    
     rospy.spin()
 
 
