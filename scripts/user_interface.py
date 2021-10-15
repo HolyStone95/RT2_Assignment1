@@ -1,5 +1,16 @@
 #! /usr/bin/env python
 
+
+"""
+.. module:: user_interface
+  :platform: Unix
+  :synopsis: Python module used by the user to interact with the robot
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrsanta@gmail.com
+
+This node allows the user to interact with the robot.
+
+"""
+
 import rospy
 import time
 from rt2_assignment1.srv import Command
@@ -7,25 +18,21 @@ import actionlib
 import rt2_assignment1.msg
 from geometry_msgs.msg import Twist
 
-## The main function.
-#
-#  This node allows the user to interact with the robot.
-#
-#
-# @var ui_client defines a service client of user_interface type.
-# It taskes as argument the Command service to activate/deactivate robot 
-# @var client defines the action client  of the go_to_point Action. 
-# As argument it takes the action of type GoalReaching 
-# @var pub It defines the publsiher of the cmd_vel toic.
-# Used to stop the robot
-# @var x it stores the input value inserted by the user
 
 def main():
+    """
+    This function initializes the needed variables and then wait to see if
+      the user want to start using the robot.
+    Defines a service client of ``user_interface`` type
+      it taskes as argument the Command service to activate/deactivate robot 
+    
+    Args:None
+      
+    Returns:None
+    """
     # Initialising the user_interface node
     rospy.init_node('user_interface')
     ui_client = rospy.ServiceProxy('/user_interface', Command)
-    client = actionlib.SimpleActionClient('go_to_point', rt2_assignment1.msg.GoalReachingAction)
-    pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     time.sleep(10)
     rate = rospy.Rate(20)
     x = int(input("\nPress 1 to start the robot "))

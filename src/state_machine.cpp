@@ -101,6 +101,8 @@ int main(int argc, char **argv)
    	else{	
    		if(change){
    	            ac.cancelGoal();
+   	            std::cout << "\nGoal cancelled"<< std::endl;
+   	            change = false;
    		}
    		msg.linear.x=0;
    		msg.linear.y=0;

@@ -1,0 +1,123 @@
+\hypertarget{namespacego__to__point}{}\doxysection{go\+\_\+to\+\_\+point Namespace Reference}
+\label{namespacego__to__point}\index{go\_to\_point@{go\_to\_point}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgo__to__point_1_1_goal_reaching_action}{Goal\+Reaching\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacego__to__point_a36304a9f313b0579f7fc69fa01695524}{clbk\+\_\+odom}} (msg)
+\item 
+def \mbox{\hyperlink{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}{clbk\+\_\+vel}} (msg)
+\item 
+def \mbox{\hyperlink{namespacego__to__point_ab92bd6db1ec323a4d795ed6cb40aebe1}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a91dbaab25e6080f6b5dbf82cac6ce75c}\label{namespacego__to__point_a91dbaab25e6080f6b5dbf82cac6ce75c}} 
+{\bfseries position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{namespacego__to__point_ae444f19eb2019982432760ace036ce03}\label{namespacego__to__point_ae444f19eb2019982432760ace036ce03}} 
+int {\bfseries yaw\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point_aa2d0ef255bcf5d5faf9ca2764730fb17}\label{namespacego__to__point_aa2d0ef255bcf5d5faf9ca2764730fb17}} 
+int {\bfseries state\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a57b4090d0abcbcf0bfa2bcb9329d3036}\label{namespacego__to__point_a57b4090d0abcbcf0bfa2bcb9329d3036}} 
+{\bfseries pub\+\_\+} = None
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a0157a8fb4c1c26f4d5e8ea95652b0d7c}\label{namespacego__to__point_a0157a8fb4c1c26f4d5e8ea95652b0d7c}} 
+{\bfseries vel\+\_\+} = Twist()
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a9119ce4b16011b75d7a08dc0f9e2f69e}\label{namespacego__to__point_a9119ce4b16011b75d7a08dc0f9e2f69e}} 
+int {\bfseries vel} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a67f95834f0959feb3facd17bc7fa2b38}\label{namespacego__to__point_a67f95834f0959feb3facd17bc7fa2b38}} 
+int {\bfseries yaw\+\_\+precision\+\_\+} = math.\+pi / 9
+\item 
+\mbox{\Hypertarget{namespacego__to__point_af74ccf49164d0478ca8343e2031d5813}\label{namespacego__to__point_af74ccf49164d0478ca8343e2031d5813}} 
+int {\bfseries yaw\+\_\+precision\+\_\+2\+\_\+} = math.\+pi / 90
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5}\label{namespacego__to__point_a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5}} 
+float {\bfseries dist\+\_\+precision\+\_\+} = 0.\+1
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a524106fc7667a0927951dfd89d52d6a7}\label{namespacego__to__point_a524106fc7667a0927951dfd89d52d6a7}} 
+float {\bfseries kp\+\_\+a} = -\/3.\+0
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a7bc498652ca66932e704e738b50c297b}\label{namespacego__to__point_a7bc498652ca66932e704e738b50c297b}} 
+float {\bfseries kp\+\_\+d} = 0.\+2
+\item 
+\mbox{\Hypertarget{namespacego__to__point_acb4e14986fafe5cb73bb8ad0c178869d}\label{namespacego__to__point_acb4e14986fafe5cb73bb8ad0c178869d}} 
+float {\bfseries ub\+\_\+a} = 0.\+6
+\item 
+\mbox{\Hypertarget{namespacego__to__point_afecad4058844db05d8321199e25b4498}\label{namespacego__to__point_afecad4058844db05d8321199e25b4498}} 
+float {\bfseries lb\+\_\+a} = -\/0.\+5
+\item 
+\mbox{\Hypertarget{namespacego__to__point_a16c473b9e717200c483d18e66b48152a}\label{namespacego__to__point_a16c473b9e717200c483d18e66b48152a}} 
+float {\bfseries ub\+\_\+d} = 0.\+6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}.. module:: go_to_point
+  :platform: Unix
+  :synopsis: Python module use by the robot to reach a destination
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrsanta@gmail.com
+
+This node implements an action server with various function in order to achieve a certain destinaton
+
+Service:
+  /go_to_point
+
+Publisher:
+  /cmd_vel
+
+Subscriber:
+  /odom
+  /cmd_vel_filter
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacego__to__point_a36304a9f313b0579f7fc69fa01695524}\label{namespacego__to__point_a36304a9f313b0579f7fc69fa01695524}} 
+\index{go\_to\_point@{go\_to\_point}!clbk\_odom@{clbk\_odom}}
+\index{clbk\_odom@{clbk\_odom}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This Callback is for the subscriber to topic ``odom``
+  it keeps track of the robot pose.
+
+Args:
+  msg: the message carrying the information about robot pose
+  
+Returns:None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}\label{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}} 
+\index{go\_to\_point@{go\_to\_point}!clbk\_vel@{clbk\_vel}}
+\index{clbk\_vel@{clbk\_vel}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{clbk\_vel()}{clbk\_vel()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+vel (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This Callback is for the subscriber to topic ``cmd_vel_filter``
+  it keeps track of the robot velocities.
+
+Args:
+  msg: the message carrying the information about robot velocities
+  
+Returns:None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point_ab92bd6db1ec323a4d795ed6cb40aebe1}\label{namespacego__to__point_ab92bd6db1ec323a4d795ed6cb40aebe1}} 
+\index{go\_to\_point@{go\_to\_point}!main@{main}}
+\index{main@{main}!go\_to\_point@{go\_to\_point}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function initializes the ROS node and the action server,
+  the publisher on ``cmd_vel``, and subscribers on
+  ``odom`` and ``cmd_vel_filter``.
+\end{DoxyVerb}
+ 

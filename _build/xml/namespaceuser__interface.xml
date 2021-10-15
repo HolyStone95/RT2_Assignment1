@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceuser__interface" kind="namespace" language="Python">
+    <compoundname>user_interface</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceuser__interface_1ac26bdb296b6776907b72c17ce5a1b24a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def user_interface.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function initializes the needed variables and then wait to see if
+  the user want to start using the robot.
+Defines a service client of ``user_interface`` type
+  it taskes as argument the Command service to activate/deactivate robot 
+
+Args:None
+  
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/user_interface.py" line="22" column="1" bodyfile="scripts/user_interface.py" bodystart="22" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: user_interface
+  :platform: Unix
+  :synopsis: Python module used by the user to interact with the robot
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrsanta@gmail.com
+
+This node allows the user to interact with the robot.</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/user_interface.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

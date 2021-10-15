@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgo__to__point_1_1_goal_reaching_action" kind="class" language="Python" prot="public">
+    <compoundname>go_to_point::GoalReachingAction</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgo__to__point_1_1_goal_reaching_action_1a9e0156bee4e7e0f4e6fc6ad4b315dbfd" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>go_to_point.GoalReachingAction::_feedback</definition>
+        <argsstring></argsstring>
+        <name>_feedback</name>
+        <initializer>=  rt2_assignment1.msg.GoalReachingFeedback()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="98" column="1" bodyfile="scripts/go_to_point.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgo__to__point_1_1_goal_reaching_action_1aa4315b701de400c6196f12fc04b52dbc" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>go_to_point.GoalReachingAction::_result</definition>
+        <argsstring></argsstring>
+        <name>_result</name>
+        <initializer>=  rt2_assignment1.msg.GoalReachingResult()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="99" column="1" bodyfile="scripts/go_to_point.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgo__to__point_1_1_goal_reaching_action_1a55b5e9462663ba06d0607caaca6d0035" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>go_to_point.GoalReachingAction::_goal</definition>
+        <argsstring></argsstring>
+        <name>_goal</name>
+        <initializer>=  rt2_assignment1.msg.GoalReachingGoal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="100" column="1" bodyfile="scripts/go_to_point.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgo__to__point_1_1_goal_reaching_action_1ac213a40e0abcdaf621ef3f348f310577" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point.GoalReachingAction::_action_name</definition>
+        <argsstring></argsstring>
+        <name>_action_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="113" column="1" bodyfile="scripts/go_to_point.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgo__to__point_1_1_goal_reaching_action_1abad6365bca13d9d9c73b71fb4eaebe38" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point.GoalReachingAction::_as</definition>
+        <argsstring></argsstring>
+        <name>_as</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="115" column="1" bodyfile="scripts/go_to_point.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1ad98a38215cc1277e37a38889c9b7c91b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.__init__</definition>
+        <argsstring>(self, name)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initializes the action object
+    
+Args:
+  self
+  name(str): refers to the action name 
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="103" column="1" bodyfile="scripts/go_to_point.py" bodystart="103" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a8883d35ea6f016c7bc2c9ac6e3367f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.execute_cb</definition>
+        <argsstring>(self, goal)</argsstring>
+        <name>execute_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>goal</type>
+          <defname>goal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This calback takes as argument the goal variable whose value is
+  provided from the action client in the state_machine.cpp. The feedback
+  of the action message is constantly updated as the current pose of 
+  the robot. The desired_position is initialised as the goal of 
+  the action. To conclude with, the change_state function (which is responsible
+  for the _state assignment) is given with argument zero so that the robot 
+  can start fixing its own yaw before proceeding by reaching the goal
+    
+Args:
+  self
+  goal: refers to the action&apos;s aim
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="121" column="1" bodyfile="scripts/go_to_point.py" bodystart="121" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a0958917513d4deaae7f5091979c281c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.change_state</definition>
+        <argsstring>(self, state)</argsstring>
+        <name>change_state</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>state</type>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>It controls the state of the robot, allowing to translate 
+  or to rotate when needed.
+    
+Args:
+  self
+  state(Int) indicates the new state to chancge to
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="181" column="1" bodyfile="scripts/go_to_point.py" bodystart="181" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a51249013da22ad9caa521c87048e7b4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.normalize_angle</definition>
+        <argsstring>(self, angle)</argsstring>
+        <name>normalize_angle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>angle</type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Function for normalizing the angle between -pi and pi.
+    
+Args:
+  angle(Float): the input angle
+      
+Returns:
+  angle(Float): the normalized angle.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="197" column="1" bodyfile="scripts/go_to_point.py" bodystart="197" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a421d818d46da3ac2f08fe0c745f055c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.fix_yaw</definition>
+        <argsstring>(self, des_pos)</argsstring>
+        <name>fix_yaw</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>It rotates the robot to fix it&apos;s yah in the desired direction
+  by publishing a twist message on /cmd_vel
+    
+Args:
+  self
+  des_pos(Float) from this desired position computes the desired yah
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="213" column="1" bodyfile="scripts/go_to_point.py" bodystart="213" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a560f079f00060a1dee2c765f7f11d967" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.go_straight_ahead</definition>
+        <argsstring>(self, des_pos)</argsstring>
+        <name>go_straight_ahead</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>It allows the robot to go straight or to change it&apos;s state if needed
+    
+Args:
+  self
+  des_pos(Float) the desired final pos of the robot
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="244" column="1" bodyfile="scripts/go_to_point.py" bodystart="244" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1a8590a161935bcbdacc3619c3e5326f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.fix_final_yaw</definition>
+        <argsstring>(self, des_yaw)</argsstring>
+        <name>fix_final_yaw</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>des_yaw</type>
+          <defname>des_yaw</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>It allows the robot to fix it&apos;s yah and reach the final state(done)
+  if the conditions are met
+    
+Args:
+  self
+  des_yah(Float) the desired final yah of the robot
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="277" column="1" bodyfile="scripts/go_to_point.py" bodystart="277" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classgo__to__point_1_1_goal_reaching_action_1af1688a6e7d1f9407f69919e47b771611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.GoalReachingAction.done</definition>
+        <argsstring>(self)</argsstring>
+        <name>done</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>It stops the robot meaning that the pose has been reached
+    
+Args:
+  self
+      
+Returns:None
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point.py" line="304" column="1" bodyfile="scripts/go_to_point.py" bodystart="304" bodyend="321"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>go_to_point.GoalReachingAction</label>
+        <link refid="classgo__to__point_1_1_goal_reaching_action"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>go_to_point.GoalReachingAction</label>
+        <link refid="classgo__to__point_1_1_goal_reaching_action"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="scripts/go_to_point.py" line="95" column="1" bodyfile="scripts/go_to_point.py" bodystart="95" bodyend="322"/>
+    <listofallmembers>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1ad98a38215cc1277e37a38889c9b7c91b" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>__init__</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1ac213a40e0abcdaf621ef3f348f310577" prot="private" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>_action_name</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1abad6365bca13d9d9c73b71fb4eaebe38" prot="private" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>_as</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a9e0156bee4e7e0f4e6fc6ad4b315dbfd" prot="private" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>_feedback</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a55b5e9462663ba06d0607caaca6d0035" prot="private" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>_goal</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1aa4315b701de400c6196f12fc04b52dbc" prot="private" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>_result</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a0958917513d4deaae7f5091979c281c8" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>change_state</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1af1688a6e7d1f9407f69919e47b771611" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>done</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a8883d35ea6f016c7bc2c9ac6e3367f98" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>execute_cb</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a8590a161935bcbdacc3619c3e5326f03" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>fix_final_yaw</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a421d818d46da3ac2f08fe0c745f055c5" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>fix_yaw</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a560f079f00060a1dee2c765f7f11d967" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>go_straight_ahead</name></member>
+      <member refid="classgo__to__point_1_1_goal_reaching_action_1a51249013da22ad9caa521c87048e7b4f" prot="public" virt="non-virtual"><scope>go_to_point::GoalReachingAction</scope><name>normalize_angle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

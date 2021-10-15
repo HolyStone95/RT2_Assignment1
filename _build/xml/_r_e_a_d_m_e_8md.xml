@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>First<sp/>assignment<sp/>_Research<sp/>Track_<sp/>course<sp/>-<sp/>second<sp/>module<sp/>-<sp/>actions<sp/>branch</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Index:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[General<sp/>Instructions](#general-instructions)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Launch<sp/>the<sp/>node](#launch-the-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Additional<sp/>docuementation](#additional-documentation)</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>General<sp/>Instructions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>branch<sp/>contains<sp/>the<sp/>same<sp/>package<sp/>of<sp/>the<sp/>action<sp/>branch,<sp/>but<sp/>the<sp/>documentation<sp/>is<sp/>done<sp/>using<sp/>**Sphinx**.<sp/>In<sp/>addition<sp/>a<sp/>**Jupyter**<sp/>notebook<sp/>is<sp/>being<sp/>added<sp/>in<sp/>the<sp/>**notebook**<sp/>folder<sp/>in<sp/>order<sp/>to<sp/>implement<sp/>a<sp/>GUI<sp/>to<sp/>better<sp/>and<sp/>easily<sp/>control<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>simulation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Launch<sp/>the<sp/>node<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>launch<sp/>the<sp/>node,<sp/>please<sp/>run:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>action_branch.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>nodes<sp/>are<sp/>launched<sp/>start<sp/>the<sp/>Jupyter<sp/>notebook<sp/>in<sp/>order<sp/>to<sp/>use<sp/>the<sp/>enhanced<sp/>interface<sp/>for<sp/>controlling<sp/>the<sp/>robot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Additional<sp/>documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">can<sp/>be<sp/>found<sp/>opening<sp/>the<sp/>index.html<sp/>file<sp/>in<sp/>the<sp/>*docs*<sp/>folder</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
