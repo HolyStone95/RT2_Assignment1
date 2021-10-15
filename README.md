@@ -1,5 +1,4 @@
-
-# First assignment _Research Track_ course - second module - **jupy_doxy** branch
+# First assignment _Research Track_ course - second module - jupy_doxy branch
 
 - Index:
   - [General Instructions](#general-instructions)
@@ -7,16 +6,15 @@
   - [Additional docuementation](#additional-documentation)
 ## General Instructions
 
-This branch contains the same package contained in the **actions** branch nnd the documentation is realized using **Doxygen**. Additionally inside the folder **notebook** it has been implemented a jupyter notebook to enhanche the user interface interacting with the simulation in Gazebo and the ROS nodes.
+This branch contains the same package of the action branch slightly modified and the documentation is done using **Doxygen**. In addition two **Jupyter** notebook are being added in the **notebook** folder in order to implement a GUI to better and easily control the robot in the simulation. The one called *final_assignment* is the complete and commented user interface, while notebook called text is to show that the plot regarding velocities wroks but they do not in *final_assignment* notebook, do not know why.
 
-## Launch the nodes 
+## Launch the node 
 
-To launch the nodes, please run:
+To launch the node, please run:
 ```
 roslaunch rt2_assignment1 action_branch.launch
 ```
-
-After that run the jupyter notebook to start interacting with the simulation using the new interface.
+Once the nodes are launched start the Jupyter notebook in order to use the enhanced interface for controlling the robot
 
 ## Additional documentation
 

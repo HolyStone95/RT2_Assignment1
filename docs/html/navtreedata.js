@@ -22,10 +22,10 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
-    [ "First assignment <em>Research Track</em> course - second module - actions branch", "md__r_e_a_d_m_e.html", [
+  [ "rt2_assignment1", "index.html", [
+    [ "First assignment <em>Research Track</em> course - second module - jupy_doxy branch", "md__r_e_a_d_m_e.html", [
       [ "General Instructions", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Launch the nodes", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Launch the node", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
       [ "Additional documentation", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [

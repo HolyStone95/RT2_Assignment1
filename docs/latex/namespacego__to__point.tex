@@ -11,7 +11,7 @@ class \mbox{\hyperlink{classgo__to__point_1_1_goal_reaching_action}{Goal\+Reachi
 def \mbox{\hyperlink{namespacego__to__point_a36304a9f313b0579f7fc69fa01695524}{clbk\+\_\+odom}} (msg)
 \item 
 def \mbox{\hyperlink{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}{clbk\+\_\+vel}} (msg)
-\item 
+\begin{DoxyCompactList}\small\item\em The clbk\+\_\+vel function. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacego__to__point_a0961ae1b210549fe6c6567bf94fb17c6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, name)
 \item 
 def \mbox{\hyperlink{namespacego__to__point_a1d2c03bc184771298197eab5e767d6ea}{execute\+\_\+cb}} (self, goal)
@@ -86,22 +86,17 @@ It controls the state of the robot, allowing to translate or to rotate when need
 \doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
 {\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}The clbk_odom function.
-
-This Callback is for the subscriber to topic odom
-it keeps track of the robot pose.
-
-:var position_ : gets the actual position of the robot 
-:var yah: defines the robot orientation
-:param msg: the message carrying the information
-\end{DoxyVerb}
- \mbox{\Hypertarget{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}\label{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}} 
+\mbox{\Hypertarget{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}\label{namespacego__to__point_afea56a392e98b6db44754a04f7039ccd}} 
 \index{go\_to\_point@{go\_to\_point}!clbk\_vel@{clbk\_vel}}
 \index{clbk\_vel@{clbk\_vel}!go\_to\_point@{go\_to\_point}}
 \doxysubsubsection{\texorpdfstring{clbk\_vel()}{clbk\_vel()}}
 {\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+vel (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}\label{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}} 
+
+
+The clbk\+\_\+vel function. 
+
+This Callback is for the subscriber to topic cmd\+\_\+vel\+\_\+filter it keeps track of the robot velocities. \mbox{\Hypertarget{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}\label{namespacego__to__point_ad537df6ce92476d81b2de4048ea1732f}} 
 \index{go\_to\_point@{go\_to\_point}!done@{done}}
 \index{done@{done}!go\_to\_point@{go\_to\_point}}
 \doxysubsubsection{\texorpdfstring{done()}{done()}}

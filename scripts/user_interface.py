@@ -19,7 +19,6 @@ from geometry_msgs.msg import Twist
 # @var pub It defines the publsiher of the cmd_vel toic.
 # Used to stop the robot
 # @var x it stores the input value inserted by the user
-
 def main():
     # Initialising the user_interface node
     rospy.init_node('user_interface')

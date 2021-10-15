@@ -42,19 +42,7 @@ ub_d = 0.6
 # @var position_ gets the actual position of the robot 
 # @var yah defines the robot orientation
 # @arg msg the message carrying the information
-
 def clbk_odom(msg):
-    """
-    The clbk_odom function.
-
-    This Callback is for the subscriber to topic odom
-    it keeps track of the robot pose.
-
-    :var position_ : gets the actual position of the robot 
-    :var yah: defines the robot orientation
-    :param msg: the message carrying the information
-    """
-
     global position_
     global yaw_
 
@@ -69,6 +57,10 @@ def clbk_odom(msg):
     euler = transformations.euler_from_quaternion(quaternion)
     yaw_ = euler[2]
     
+## The clbk_vel function.
+#
+#  This Callback is for the subscriber to topic cmd_vel_filter
+#  it keeps track of the robot velocities.
 def clbk_vel(msg):
     global vel_
 
@@ -88,12 +80,11 @@ class GoalReachingAction(object):
     _goal = rt2_assignment1.msg.GoalReachingGoal()
 
 ## The _init_function. initializes the action object
-#.
+#
 #
 # @arg self 
 # @arg name refers to the action name 
 # @var _as It defines the action server 
-
     def __init__(self, name):
         self._action_name = name
         # initialisation of the actionlib server.As arguments it gets the name of the action and the msg of type GoalREaching action and the callback execute_cb. 
@@ -116,8 +107,7 @@ class GoalReachingAction(object):
 # @arg goal refers to the action's aim
 # @var r it defines the helper variable
 # @var success boolean variable to confirm the action ending 
-
-    def execute_cb(self, goal):
+def execute_cb(self, goal):
         
         global position_, yaw_precision_, yaw_, state_, pub_, vel_
         # helper variables
@@ -266,13 +256,11 @@ class GoalReachingAction(object):
 
 ## Documentation for the main function.
 #
-#  More details.
 #
 # @param None
 # @var server it is defined as an object of the GoalReaching class 
 # @var pub_ it defines the publisher of the topic /cmd_vel 
 # @var sub_odom it is initialised as the subscriber to the /odom topic. It calls the clbk_odom
-
 def main():
     global pub_
     rospy.init_node('go_to_point')
