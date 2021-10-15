@@ -6,7 +6,7 @@
   - [Additional docuementation](#additional-documentation)
 ## General Instructions
 
-This branch contains the same package of the action branch slightly modified and the documentation is done using **Sphinx**. In addition a **Jupyter** notebook is being added in the **notebook** folder in order to implement a GUI to better and easily control the robot in the simulation.
+This branch contains the same package of the action branch slightly modified and the documentation is done using **Sphinx**. In addition two **Jupyter** notebook are being added in the **notebook** folder in order to implement a GUI to better and easily control the robot in the simulation. The one called *final_assignment* is the complete and commented user interface, while notebook called text is to show that the plot regarding velocities wroks but they do not in *final_assignment* notebook, do not know why.
 
 ## Launch the node 
 
