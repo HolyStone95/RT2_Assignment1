@@ -4,7 +4,9 @@
   - [General Instructions](#general-instructions)
   - [More about the "_actions_" branch](#more-about-the-actions-branch)
   - [More about the "_ros2_" branch](#more-about-the-ros2-branch)
-  - [Launch the node](#launch-the-node)
+  - [More about the "_jupy_doxy_" branch](#more-about-the-jupy_doxy-branch)
+  - [More about the "_jupy_sphinx_" branch](#more-about-the-jupy_sphinx-branch)
+  - [Launch the node](#launch-the-node-in-this-branch)
   - [Additional documentation](#additional-documentation)
 ## General Instructions
 
@@ -28,7 +30,13 @@ Also:
 1. I've written a  launch file to start the container manager and all the nodes as components.
 2. a script to launch all required nodes and the simulation has also been implemented
 
-## Launch the node 
+## More about the "_jupy_doxy_" branch
+In this branch I've slightly modified the code present in the branch actions in order to work in parallel with a Jupyter notebook. The code is then commented using Doxygen.
+
+## More about the "_jupy_sphinx_" branch
+In this branch I've slightly modified the code present in the branch actions in order to work in parallel with a Jupyter notebook. The code is then commented using Sphinx.
+
+## Launch the node in this branch
 
 To launch the node, please run:
 ```
