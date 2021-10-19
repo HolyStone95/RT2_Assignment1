@@ -93,7 +93,9 @@ def clbk_vel(msg):
 
 
 class GoalReachingAction(object):
+    """This class defines the action serve for reaching a desired position.
 
+    """
     # initialising variables for defining each field of the action
     _feedback = rt2_assignment1.msg.GoalReachingFeedback()
     _result = rt2_assignment1.msg.GoalReachingResult()

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="md__r_e_a_d_m_e" kind="page">
     <compoundname>md_README</compoundname>
-    <title>First assignment &lt;em&gt;Research Track&lt;/em&gt; course - second module - actions branch</title>
+    <title>First assignment &lt;em&gt;Research Track&lt;/em&gt; course - second module - jupy_sphinx branch</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -17,7 +17,7 @@
 </para>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
 <title>General Instructions</title>
-<para>This branch contains the same package of the action branch, but the documentation is done using <bold>Sphinx</bold>. In addition a <bold>Jupyter</bold> notebook is being added in the <bold>notebook</bold> folder in order to implement a GUI to better and easily control the robot in the simulation.</para>
+<para>This branch contains the same package of the action branch slightly modified and the documentation is done using <bold>Sphinx</bold>. In addition two <bold>Jupyter</bold> notebook are being added in the <bold>notebook</bold> folder in order to implement a GUI to better and easily control the robot in the simulation. The one called <emphasis>final_assignment</emphasis> is the complete and commented user interface, while notebook called text is to show that the plot regarding velocities wroks but they do not in <emphasis>final_assignment</emphasis> notebook, do not know why.</para>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
 <title>Launch the node</title>
@@ -27,7 +27,7 @@
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
 <title>Additional documentation</title>
-<para>can be found opening the index.html file in the <emphasis>docs</emphasis> folder </para>
+<para>can be found opening the index.html file in the *_build/html* folder </para>
 </sect1>
     </detaileddescription>
   </compounddef>

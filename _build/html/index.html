@@ -42,8 +42,8 @@
 <li><a class="reference internal" href="#rt2-assignment1-s-documentation">Rt2_assignment1’s documentation!</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#user-interface-module">User Interface Module</a></li>
-<li><a class="reference internal" href="#gotopoint-module">GoToPoint Module</a></li>
+<li><a class="reference internal" href="#module-scripts.user_interface">User Interface Module</a></li>
+<li><a class="reference internal" href="#module-scripts.go_to_point">GoToPoint Module</a></li>
 <li><a class="reference internal" href="#position-service">Position Service</a></li>
 <li><a class="reference internal" href="#state-machine">State Machine</a></li>
 </ul>
@@ -89,11 +89,202 @@
 <p>This is the documentation of the RT2_assignment package!</p>
 </div>
 </div>
-<div class="section" id="user-interface-module">
-<h1>User Interface Module<a class="headerlink" href="#user-interface-module" title="Permalink to this headline"></a></h1>
+<div class="section" id="module-scripts.user_interface">
+<span id="user-interface-module"></span><h1>User Interface Module<a class="headerlink" href="#module-scripts.user_interface" title="Permalink to this headline"></a></h1>
+<span class="target" id="module-user_interface"></span><p>This node allows the user to interact with the robot.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.user_interface.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.user_interface.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/user_interface.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.user_interface.main" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>This function initializes the needed variables and then wait to see if</dt><dd><p>the user want to start using the robot.</p>
+</dd>
+<dt>Defines a service client of <code class="docutils literal notranslate"><span class="pre">user_interface</span></code> type</dt><dd><p>it taskes as argument the Command service to activate/deactivate robot</p>
+</dd>
+</dl>
+<p>Args:None</p>
+<p>Returns:None</p>
+</dd></dl>
+
 </div>
-<div class="section" id="gotopoint-module">
-<h1>GoToPoint Module<a class="headerlink" href="#gotopoint-module" title="Permalink to this headline"></a></h1>
+<div class="section" id="module-scripts.go_to_point">
+<span id="gotopoint-module"></span><h1>GoToPoint Module<a class="headerlink" href="#module-scripts.go_to_point" title="Permalink to this headline"></a></h1>
+<span class="target" id="module-go_to_point"></span><p>This node implements an action server with various function in order to achieve a certain destinaton</p>
+<dl class="simple">
+<dt>Service:</dt><dd><p>/go_to_point</p>
+</dd>
+<dt>Publisher:</dt><dd><p>/cmd_vel</p>
+</dd>
+<dt>Subscriber:</dt><dd><p>/odom
+/cmd_vel_filter</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">scripts.go_to_point.</span></span><span class="sig-name descname"><span class="pre">GoalReachingAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction" title="Permalink to this definition"></a></dt>
+<dd><p>This class defines the action serve for reaching a desired position.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.change_state">
+<span class="sig-name descname"><span class="pre">change_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.change_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.change_state" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>It controls the state of the robot, allowing to translate</dt><dd><p>or to rotate when needed.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>state</strong> (<em>Int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.done">
+<span class="sig-name descname"><span class="pre">done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.done" title="Permalink to this definition"></a></dt>
+<dd><p>It stops the robot meaning that the pose has been reached</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> – </p>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.execute_cb">
+<span class="sig-name descname"><span class="pre">execute_cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.execute_cb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.execute_cb" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>This calback takes as argument the goal variable whose value is</dt><dd><p>provided from the action client in the state_machine.cpp. The feedback
+of the action message is constantly updated as the current pose of
+the robot. The desired_position is initialised as the goal of
+the action. To conclude with, the change_state function (which is responsible
+for the _state assignment) is given with argument zero so that the robot
+can start fixing its own yaw before proceeding by reaching the goal</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>goal</strong> – refers to the action’s aim</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.fix_final_yaw">
+<span class="sig-name descname"><span class="pre">fix_final_yaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">des_yaw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.fix_final_yaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.fix_final_yaw" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>It allows the robot to fix it’s yah and reach the final state(done)</dt><dd><p>if the conditions are met</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>des_yah</strong> (<em>Float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.fix_yaw">
+<span class="sig-name descname"><span class="pre">fix_yaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">des_pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.fix_yaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.fix_yaw" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>It rotates the robot to fix it’s yah in the desired direction</dt><dd><p>by publishing a twist message on /cmd_vel</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>des_pos</strong> (<em>Float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.go_straight_ahead">
+<span class="sig-name descname"><span class="pre">go_straight_ahead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">des_pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.go_straight_ahead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.go_straight_ahead" title="Permalink to this definition"></a></dt>
+<dd><p>It allows the robot to go straight or to change it’s state if needed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>des_pos</strong> (<em>Float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scripts.go_to_point.GoalReachingAction.normalize_angle">
+<span class="sig-name descname"><span class="pre">normalize_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#GoalReachingAction.normalize_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.GoalReachingAction.normalize_angle" title="Permalink to this definition"></a></dt>
+<dd><p>Function for normalizing the angle between -pi and pi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>Float</em>) – the input angle</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the normalized angle.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>angle(Float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.go_to_point.clbk_odom">
+<span class="sig-prename descclassname"><span class="pre">scripts.go_to_point.</span></span><span class="sig-name descname"><span class="pre">clbk_odom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#clbk_odom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.clbk_odom" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>This Callback is for the subscriber to topic <code class="docutils literal notranslate"><span class="pre">odom</span></code></dt><dd><p>it keeps track of the robot pose.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – the message carrying the information about robot pose</p>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.go_to_point.clbk_vel">
+<span class="sig-prename descclassname"><span class="pre">scripts.go_to_point.</span></span><span class="sig-name descname"><span class="pre">clbk_vel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#clbk_vel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.clbk_vel" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>This Callback is for the subscriber to topic <code class="docutils literal notranslate"><span class="pre">cmd_vel_filter</span></code></dt><dd><p>it keeps track of the robot velocities.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – the message carrying the information about robot velocities</p>
+</dd>
+</dl>
+<p>Returns:None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.go_to_point.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.go_to_point.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/go_to_point.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.go_to_point.main" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>This function initializes the ROS node and the action server,</dt><dd><p>the publisher on <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code>, and subscribers on
+<code class="docutils literal notranslate"><span class="pre">odom</span></code> and <code class="docutils literal notranslate"><span class="pre">cmd_vel_filter</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="position-service">
 <h1>Position Service<a class="headerlink" href="#position-service" title="Permalink to this headline"></a></h1>

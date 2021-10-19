@@ -7,7 +7,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline><highlight class="normal">#<sp/>First<sp/>assignment<sp/>_Research<sp/>Track_<sp/>course<sp/>-<sp/>second<sp/>module<sp/>-<sp/>actions<sp/>branch</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>First<sp/>assignment<sp/>_Research<sp/>Track_<sp/>course<sp/>-<sp/>second<sp/>module<sp/>-<sp/>jupy_sphinx<sp/>branch</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">-<sp/>Index:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>-<sp/>[General<sp/>Instructions](#general-instructions)</highlight></codeline>
@@ -15,7 +15,7 @@
 <codeline><highlight class="normal"><sp/><sp/>-<sp/>[Additional<sp/>docuementation](#additional-documentation)</highlight></codeline>
 <codeline><highlight class="normal">##<sp/>General<sp/>Instructions</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">This<sp/>branch<sp/>contains<sp/>the<sp/>same<sp/>package<sp/>of<sp/>the<sp/>action<sp/>branch,<sp/>but<sp/>the<sp/>documentation<sp/>is<sp/>done<sp/>using<sp/>**Sphinx**.<sp/>In<sp/>addition<sp/>a<sp/>**Jupyter**<sp/>notebook<sp/>is<sp/>being<sp/>added<sp/>in<sp/>the<sp/>**notebook**<sp/>folder<sp/>in<sp/>order<sp/>to<sp/>implement<sp/>a<sp/>GUI<sp/>to<sp/>better<sp/>and<sp/>easily<sp/>control<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>simulation.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>branch<sp/>contains<sp/>the<sp/>same<sp/>package<sp/>of<sp/>the<sp/>action<sp/>branch<sp/>slightly<sp/>modified<sp/>and<sp/>the<sp/>documentation<sp/>is<sp/>done<sp/>using<sp/>**Sphinx**.<sp/>In<sp/>addition<sp/>two<sp/>**Jupyter**<sp/>notebook<sp/>are<sp/>being<sp/>added<sp/>in<sp/>the<sp/>**notebook**<sp/>folder<sp/>in<sp/>order<sp/>to<sp/>implement<sp/>a<sp/>GUI<sp/>to<sp/>better<sp/>and<sp/>easily<sp/>control<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>simulation.<sp/>The<sp/>one<sp/>called<sp/>*final_assignment*<sp/>is<sp/>the<sp/>complete<sp/>and<sp/>commented<sp/>user<sp/>interface,<sp/>while<sp/>notebook<sp/>called<sp/>text<sp/>is<sp/>to<sp/>show<sp/>that<sp/>the<sp/>plot<sp/>regarding<sp/>velocities<sp/>wroks<sp/>but<sp/>they<sp/>do<sp/>not<sp/>in<sp/>*final_assignment*<sp/>notebook,<sp/>do<sp/>not<sp/>know<sp/>why.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Launch<sp/>the<sp/>node<sp/></highlight></codeline>
 <codeline></codeline>
@@ -27,7 +27,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Additional<sp/>documentation</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">can<sp/>be<sp/>found<sp/>opening<sp/>the<sp/>index.html<sp/>file<sp/>in<sp/>the<sp/>*docs*<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">can<sp/>be<sp/>found<sp/>opening<sp/>the<sp/>index.html<sp/>file<sp/>in<sp/>the<sp/>*_build/html*<sp/>folder</highlight></codeline>
     </programlisting>
     <location file="README.md"/>
   </compounddef>
